@@ -3,7 +3,7 @@
 
 const express = require("express");
 const app = express();
-import { createTodo, updateTodo } from "./types";
+const { createTodo, updateTodo } = require('./types')
 const { todo } = require("./db");
 
 app.use(express.json());
@@ -57,3 +57,5 @@ app.put("/completed", async (req, res) => {
     msg: "Todo marked as completed!",
   });
 });
+
+app.listen(3000)
