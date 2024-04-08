@@ -74,6 +74,8 @@
 import { useState } from "react";
 import React, { Fragment } from "react";
 
+let counter = 4;
+
 function App() {
   const [todos, setTodos] = useState([
     {
@@ -96,7 +98,7 @@ function App() {
   function addTodo() {
 
     setTodos([...todos, {
-      id: 4,
+      id: counter++,
       title: Math.random(),
       description: Math.random()
     }])
@@ -116,7 +118,7 @@ function App() {
     <div>
       <button onClick={addTodo}>Add a todo</button>
       {todos.map(function (todo) {
-        return <Todo title={todo.title} description={todo.description} />;
+        return <Todo key={todo.id} title={todo.title} description={todo.description} />;
       })}
     </div>
   );
