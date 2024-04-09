@@ -35,6 +35,8 @@
 
 // export default App;
 
+
+
 // React Memo - Memo lets you skip re-rendering a component when its props are unchanged.
 
 // By using react memo, the whole app re-rendering problem can be solved.
@@ -69,68 +71,79 @@
 
 // export default App;
 
+
+
+
+
+
 // Key Components
 
-import { useState } from "react";
-import React, { Fragment } from "react";
+// import { useState } from "react";
+// import React, { Fragment } from "react";
 
-let counter = 4;
+// let counter = 4;
 
-function App() {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      title: "Read Book",
-      description: "The four agreements!",
-    },
-    {
-      id: 2,
-      title: "Go to Gym",
-      description: "Train legs today!",
-    },
-    {
-      id: 3,
-      title: "Code for 6 Hours",
-      description: "Learning react now!",
-    },
-  ]);
+// function App() {
+//   const [todos, setTodos] = useState([
+//     {
+//       id: 1,
+//       title: "Read Book",
+//       description: "The four agreements!",
+//     },
+//     {
+//       id: 2,
+//       title: "Go to Gym",
+//       description: "Train legs today!",
+//     },
+//     {
+//       id: 3,
+//       title: "Code for 6 Hours",
+//       description: "Learning react now!",
+//     },
+//   ]);
 
-  function addTodo() {
+//   function addTodo() {
 
-    setTodos([...todos, {
-      id: counter++,
-      title: Math.random(),
-      description: Math.random()
-    }])
-  //   const newTodos = [];
-  //   for (let i = 0; i < todo.length; i++) {
-  //     newTodos.push(todos[i]);
-  //   }
-  //   newTodos.push({
-  //     id: 4,
-  //     title: Math.random(),
-  //     description: Math.random(),
-  //   });
-  //   setTodos(newTodos);
-  // }
-  }
-  return (
-    <div>
-      <button onClick={addTodo}>Add a todo</button>
-      {todos.map(function (todo) {
-        return <Todo key={todo.id} title={todo.title} description={todo.description} />;
-      })}
-    </div>
-  );
-}
-function Todo({ title, description }) {
-  return (
-    <div>
-      <h1>{title}</h1>
+//     setTodos([...todos, {
+//       id: counter++,
+//       title: Math.random(),
+//       description: Math.random()
+//     }])
+//   //   const newTodos = [];
+//   //   for (let i = 0; i < todo.length; i++) {
+//   //     newTodos.push(todos[i]);
+//   //   }
+//   //   newTodos.push({
+//   //     id: 4,
+//   //     title: Math.random(),
+//   //     description: Math.random(),
+//   //   });
+//   //   setTodos(newTodos);
+//   // }
+//   }
+//   return (
+//     <div>
+//       <button onClick={addTodo}>Add a todo</button>
+//       {todos.map(function (todo) {
+//         return <Todo key={todo.id} title={todo.title} description={todo.description} />;
+//       })}
+//     </div>
+//   );
+// }
+// function Todo({ title, description }) {
+//   return (
+//     <div>
+//       <h1>{title}</h1>
 
-      <h5>{description}</h5>
-    </div>
-  );
-}
+//       <h5>{description}</h5>
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
+
+
+
+
+// Wrapper Components
+
