@@ -1,4 +1,4 @@
-export const RevenueCard = ({ title, amount, orderCount, count }) => {
+export const RevenueCard = ({ title, amount, orderCount }) => {
   return (
     <div className="bg-white rounded shadow-md p-4">
       <div className="text-gray-700 flex gap-2">
