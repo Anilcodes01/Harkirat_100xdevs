@@ -16,6 +16,11 @@ export default {
         gray : {
           600: '#d2d4d9'
         },
+        slate: {
+          500: '#e6e6e6'
+        }, 
+       
+        
 
       }
     },

@@ -1,6 +1,6 @@
-export const RevenueCard = ({ title, amount, orderCount }) => {
+export const RevenueCard2 = ({ title, amount, orderCount }) => {
   return (
-    <div className="bg-white rounded shadow-md p-4">
+    <div className="bg-white rounded-md shadow-md p-4">
       <div className="text-gray-700 flex gap-2">
         {title}{" "}
         <svg
