@@ -4,19 +4,19 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { RevenueCard } from './components/RevenueCard'
 import Sidebar from './components/sidebar'
+import  Navbar  from './components/navbar'
 
 function App() {
 
 
-  return (<div>
-    <div>
+  return (<div className='grid grid-cols-6'>
+    <div className='col-span-1' >
 <Sidebar />
     </div>
-    <div className='grid grid-cols-4'>
-<RevenueCard title={"Amount Pending"} amount={'92,312.20'} orderCount={13}/> 
-<RevenueCard title={"Amount Processed"} amount={'23,92,312.19'} orderCount={13}/> 
-
+    <div className='col-span-5'>
+<Navbar />
     </div>
+  
     </div>
   )
 }
