@@ -7,10 +7,15 @@ import Sidebar from "./components/sidebar";
 import Navbar from "./components/navbar";
 import { Overview } from "./components/Overview";
 import { RevenueCard1 } from "./components/RevenueCard1";
+import { Transcations } from "./components/transactions";
+import { Payouts } from "./components/payouts";
+import { OrderSearch } from "./components/orderSearch";
+import { Tracking } from "./components/Tracking";
 
 function App() {
   return (
-    <div className="grid grid-cols-6">
+    <div className="bg-slate-50">
+ <div className="grid grid-cols-6">
       <div className="col-span-1">
         <Sidebar />
       </div>
@@ -33,8 +38,15 @@ function App() {
           />
           <RevenueCard2 title={"Amount Processed"} amount={"23,92,312.19"} />
         </div>
+        <Transcations />
+        <Payouts payouts={'22'} refunds={'10'}/>
+        <Tracking />
       </div>
+     
     </div>
+
+    </div>
+   
   );
 }
 

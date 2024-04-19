@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      width: {
+       
+      },
       colors: {
         blue: {
           700: '#146fb5'
