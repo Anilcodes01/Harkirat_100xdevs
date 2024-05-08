@@ -1,31 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-function App() {
-  const [count, setCount] = useState(0)
+function useTodos(n) {
+  const [todos, setTodos] = useState([]);
+  const [loading, setLoading] = useState(true)
 
-  return (
-    <>
-      <MyComponent />
-    </>
-  )
+  useEffect(() => {
+ const value = setInterval(() => {
+
+  axios.get("https://sum-server.100xdevs.com/todos").then((res) => {
+    setTodos(res.data.todos);
+    setLoading(false)
+  });
+}, n * 1000)
+
+axios.get("https://sum-server.100xdevs.com/todos").then((res) => {
+  setTodos(res.data.todos);
+  setLoading(false)
+});
+
+return () => {
+clearInterval(value)
 }
 
+  }, [n]);
 
-function MyComponent() {
-  const [count, setCount] = useState(0);
+  return {todos, loading};
+}
 
-  const incrementCount = () => {
-    setCount(count + 1)
+function App() {
+  const {todos, loading} = useTodos(2);
+
+  if(loading) {
+    return <div>Loading...</div>
   }
 
   return (
     <div>
-      <p>{count}</p>
-      <button onClick={incrementCount}>Increment</button>
+      {todos.map((todo) => (
+        <Track todo={todo} />
+      ))}
     </div>
-  )
+  );
 }
-export default App
+
+function Track({ todo }) {
+  return (
+    <div>
+      {todo.title}
+      <br />
+      {todo.description}
+    </div>
+  );
+}
+
+export default App;
